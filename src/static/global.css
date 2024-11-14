@@ -185,6 +185,19 @@ summary {
   cursor: default;
 }
 
+.sage-3d,
+.sage-well,
+.sage-button {
+  border: 1px solid transparent;
+  background: linear-gradient(var(--sage-3d-background) 0 0) padding-box,
+    linear-gradient(to bottom, var(--sage-3d-background), var(--sage-3d-shadow))
+      border-box var(--sage-3d-background);
+  box-shadow: inset 1px 1px 0 0 var(--sage-3d-highlight);
+  /* box-shadow: inset 0 1px 0 0 var(--sage-3d-highlight); */
+  /* box-shadow: inset 0 1px 2px 0 var(--sage-3d-highlight); */
+  /* box-shadow: inset 1px 1px 2px 0 var(--sage-3d-highlight); */
+}
+
 .sage-well details > summary {
   border-radius: 0.5rem;
   margin: -0.5rem;
@@ -211,6 +224,10 @@ summary {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
+
+  --sage-3d-background: var(--color-header-button);
+  --sage-3d-highlight: var(--color-header-button-highlight);
+  --sage-3d-shadow: var(--color-header-button-shadow);
 }
 
 .hamburger summary::-webkit-details-marker {
@@ -229,7 +246,6 @@ summary {
 
 .hamburger > summary {
   position: relative;
-  background: var(--color-header-button);
   padding: 0.25rem 1rem;
   border-radius: 9999px;
   font-weight: bold;
@@ -271,6 +287,16 @@ summary {
   display: contents;
 }
 
+.slime-container {
+  filter: drop-shadow(0 1.5px 0 var(--color-header-highlight))
+    drop-shadow(0 1px 0 var(--color-header-shadow));
+  /* Don't let slime get in the way of clicking stuff */
+  pointer-events: none;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .slime {
   height: 2rem;
   background: var(--color-header-background);
@@ -285,11 +311,6 @@ summary {
       50% calc(100% - 1rem) / 4rem 100% repeat-x;
   -webkit-mask: var(--mask);
   mask: var(--mask);
-  /* Don't let slime get in the way of clicking stuff */
-  pointer-events: none;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 p {
@@ -405,7 +426,6 @@ main {
 .sage-button {
   display: inline-block;
   font-weight: bold;
-  border: 2px solid transparent;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   background: var(--color-main-link);
@@ -436,11 +456,14 @@ main {
 }
 
 .tag-list a {
-  background: var(--color-card-background);
   font-size: var(--font-size-small);
   padding: 0.25rem 0.5rem;
   border-radius: 0.5rem;
   display: flex;
+
+  --sage-3d-background: var(--color-card-background);
+  --sage-3d-highlight: var(--color-card-highlight);
+  --sage-3d-shadow: var(--color-card-shadow);
 }
 
 :where(.tag-list) .sage-link {
@@ -464,11 +487,14 @@ main {
 
 .nav :any-link {
   padding: 0.5rem 1rem;
-  background: var(--color-header-button);
   color: var(--color-header-text);
   border-radius: 0.5rem;
   text-decoration-line: none;
   text-decoration-thickness: 2px;
+
+  --sage-3d-background: var(--color-header-button);
+  --sage-3d-highlight: var(--color-header-button-highlight);
+  --sage-3d-shadow: var(--color-header-button-shadow);
 }
 
 .nav :any-link:hover {
@@ -1076,10 +1102,12 @@ main {
 
 .sage-well {
   box-sizing: border-box;
-  border: 0;
   padding: 1rem;
   border-radius: 1rem;
-  background: var(--color-card-background);
+
+  --sage-3d-background: var(--color-card-background);
+  --sage-3d-highlight: var(--color-card-highlight);
+  --sage-3d-shadow: var(--color-card-shadow);
 }
 
 .sage-well > :first-child {
@@ -1146,7 +1174,10 @@ main {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   color: var(--color-main-link);
-  background: var(--color-card-background);
+
+  --sage-3d-background: var(--color-card-background);
+  --sage-3d-highlight: var(--color-card-highlight);
+  --sage-3d-shadow: var(--color-card-shadow);
 }
 
 .link-card > img {
@@ -1183,6 +1214,11 @@ main {
 
 :is(.nav, .header, .footer-links) .sage-link:hover {
   text-decoration-line: underline;
+}
+
+.footer-container {
+  filter: drop-shadow(0 -1px 0 var(--color-footer-highlight))
+    drop-shadow(0 -1px 0 var(--color-footer-shadow));
 }
 
 .footer {

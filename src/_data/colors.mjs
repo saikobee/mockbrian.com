@@ -22,12 +22,22 @@ export const light = {
 
   "color-header-text": oklch(40, 40, 140),
   "color-header-background": oklch(90, 30, 140),
+  "color-header-highlight": oklch(94, 30, 140),
+  "color-header-shadow": oklch(80, 30, 140),
+
   "color-header-button": oklch(86, 32, 140),
+  "color-header-button-highlight": oklch(94, 32, 140),
+  "color-header-button-shadow": oklch(76, 32, 140),
 
   "color-footer-background": oklch(95, 20, 290),
+  "color-footer-highlight": oklch(99, 20, 290),
+  "color-footer-shadow": oklch(90, 20, 290),
+
   "color-aside-background": oklch(95, 20, 30),
 
   "color-card-background": oklch(95, 20, 30),
+  "color-card-highlight": oklch(99, 20, 30),
+  "color-card-shadow": oklch(85, 20, 30),
   "color-card-hover": oklch(97, 20, 30),
 
   "color-main-link": oklch(50, 50, 290),
@@ -78,6 +88,3 @@ export const dark = {
   "color-easter-egg-shadow": oklch(25, 5, 30),
   "color-easter-egg-highlight": oklch(100, 0, 0, 30),
 };
-
-export const listLight = Object.entries(light);
-export const listDark = Object.entries(dark);

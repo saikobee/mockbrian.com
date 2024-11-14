@@ -18,7 +18,7 @@ layout: "layout-base"
   {% assign tags = collections.all | getAllTags | sort | filterTagList %}
   {% for tag in tags %}
     <li>
-      <a href="/blog/tags/{{ tag }}/" class="sage-link">{{ tag | prettyTag }}</a>
+      <a href="/blog/tags/{{ tag }}/" class="sage-link sage-3d">{{ tag | prettyTag }}</a>
     </li>
   {% endfor %}
 </ul>
